@@ -37,13 +37,18 @@ az webapp list-runtimes --linux
 
 # Create web app 'flask Machine Learning'
 az webapp create --name flaskMLServerless --plan myPlan --runtime "PYTHON|3.8" -g linux-vm-rg --tags "role=webapp"
-# list webapps.
+
+# List webapps.
 az webapp list -o table                                                                 ──(Mon,Dec07)─┘
 Name               Location        State    ResourceGroup    DefaultHostName                      AppServicePlan
 -----------------  --------------  -------  ---------------  -----------------------------------  ----------------
 flaskMLServerless  Southeast Asia  Running  linux-vm-rg      flaskmlserverless.azurewebsites.net  myPlan
+
 # Bring application to browser
 az webapp browse --name flaskMLServerless
+
+# Delete webapp
+az webapp delete --name flaskMLServerless
 ```
 
    
