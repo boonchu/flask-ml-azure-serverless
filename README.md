@@ -39,6 +39,9 @@ az webapp list-runtimes --linux
 # Create web app 'flask Machine Learning'
 az webapp create --name flaskMLServerless --plan myPlan --runtime "PYTHON|3.8" -g linux-vm-rg --tags "role=webapp"
 
+# See Notes for details.
+az webapp config appsettings set -g linux-vm-rg -n flaskMLServerless --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true
+
 # List webapps.
 az webapp list -o table
 Name               Location        State    ResourceGroup    DefaultHostName                      AppServicePlan
