@@ -15,8 +15,8 @@
    * checkout this code.
    * install in azure cloud shell.
    * [List service plan](https://docs.microsoft.com/en-us/cli/azure/appservice/plan?view=azure-cli-latest#az_appservice_plan_list)
-   * [Create webapp 1](https://docs.microsoft.com/en-us/azure/developer/javascript/tutorial-vscode-azure-cli-node-03)
-   * [Create webapp 2](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops#create-a-repository-for-your-app-code)
+   * [Build webapp](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python?view=azure-devops)
+   * [Create webapp](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops)
    * [Find instance costs per hour](https://azure.microsoft.com/en-us/pricing/details/app-service/linux/)
    * [ref: az webapp create](https://docs.microsoft.com/en-us/cli/azure/webapp?view=azure-cli-latest#az_webapp_create)
 
