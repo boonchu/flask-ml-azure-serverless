@@ -48,12 +48,17 @@ stages:
       displayName: "Install requirements"
     
     - script: |
+        echo "Put lint in here"
+        source antenv/bin/activate
         make lint
+      workingDirectory: $(projectRoot)
       displayName: "Run lint"
     
     - script: |
         echo "Put test in here"
+        source antenv/bin/activate
         make test
+      workingDirectory: $(projectRoot)
       displayName: "Run tests"
       
     - script: |
