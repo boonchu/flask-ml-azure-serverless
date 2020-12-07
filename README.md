@@ -15,7 +15,8 @@
    * checkout this code.
    * install in azure cloud shell.
    * [List service plan](https://docs.microsoft.com/en-us/cli/azure/appservice/plan?view=azure-cli-latest#az_appservice_plan_list)
-   * [Create webapp](https://docs.microsoft.com/en-us/azure/developer/javascript/tutorial-vscode-azure-cli-node-03)
+   * [Create webapp 1](https://docs.microsoft.com/en-us/azure/developer/javascript/tutorial-vscode-azure-cli-node-03)
+   * [Create webapp 2](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops#create-a-repository-for-your-app-code)
    * [Find instance costs per hour](https://azure.microsoft.com/en-us/pricing/details/app-service/linux/)
    * [ref: az webapp create](https://docs.microsoft.com/en-us/cli/azure/webapp?view=azure-cli-latest#az_webapp_create)
 
@@ -39,7 +40,7 @@ az webapp list-runtimes --linux
 az webapp create --name flaskMLServerless --plan myPlan --runtime "PYTHON|3.8" -g linux-vm-rg --tags "role=webapp"
 
 # List webapps.
-az webapp list -o table                                                                 ──(Mon,Dec07)─┘
+az webapp list -o table
 Name               Location        State    ResourceGroup    DefaultHostName                      AppServicePlan
 -----------------  --------------  -------  ---------------  -----------------------------------  ----------------
 flaskMLServerless  Southeast Asia  Running  linux-vm-rg      flaskmlserverless.azurewebsites.net  myPlan
