@@ -17,6 +17,7 @@
    * [List service plan](https://docs.microsoft.com/en-us/cli/azure/appservice/plan?view=azure-cli-latest#az_appservice_plan_list)
    * [Create webapp](https://docs.microsoft.com/en-us/azure/developer/javascript/tutorial-vscode-azure-cli-node-03)
    * [Find instance costs per hour](https://azure.microsoft.com/en-us/pricing/details/app-service/linux/)
+   * [ref: az webapp create](https://docs.microsoft.com/en-us/cli/azure/webapp?view=azure-cli-latest#az_webapp_create)
 
 ```
 python3 -m venv ~/.flask-ml-azure
@@ -41,6 +42,8 @@ az webapp list -o table                                                         
 Name               Location        State    ResourceGroup    DefaultHostName                      AppServicePlan
 -----------------  --------------  -------  ---------------  -----------------------------------  ----------------
 flaskMLServerless  Southeast Asia  Running  linux-vm-rg      flaskmlserverless.azurewebsites.net  myPlan
+# Bring application to browser
+az webapp browse --name flaskMLServerless
 ```
 
    
