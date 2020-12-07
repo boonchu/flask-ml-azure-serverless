@@ -34,7 +34,12 @@ az appservice plan list --query "[?sku.tier=='Free']" -o table
 az webapp list-runtimes --linux
 
 # Create web app 'flask Machine Learning'
-az webapp up --name flaskMLServerless --plan myPlan --runtime "PYTHON|3.8" -g linux-vm-rg --tags "role=webapp"
+az webapp create --name flaskMLServerless --plan myPlan --runtime "PYTHON|3.8" -g linux-vm-rg --tags "role=webapp"
+# list webapps.
+az webapp list -o table                                                                 ──(Mon,Dec07)─┘
+Name               Location        State    ResourceGroup    DefaultHostName                      AppServicePlan
+-----------------  --------------  -------  ---------------  -----------------------------------  ----------------
+flaskMLServerless  Southeast Asia  Running  linux-vm-rg      flaskmlserverless.azurewebsites.net  myPlan
 ```
 
    
