@@ -16,6 +16,7 @@
    * install in azure cloud shell.
    * [List service plan](https://docs.microsoft.com/en-us/cli/azure/appservice/plan?view=azure-cli-latest#az_appservice_plan_list)
    * [Create webapp](https://docs.microsoft.com/en-us/azure/developer/javascript/tutorial-vscode-azure-cli-node-03)
+   * [Find instance costs per hour](https://azure.microsoft.com/en-us/pricing/details/app-service/linux/)
 
 ```
 python3 -m venv ~/.flask-ml-azure
