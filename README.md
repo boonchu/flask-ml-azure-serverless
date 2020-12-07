@@ -52,4 +52,27 @@ az webapp browse --name flaskMLServerless
 az webapp delete --name flaskMLServerless
 ```
 
+#### Notes
+
+```
+Important Notes
+
+If your app fails because of a missing dependency, then your requirements.txt file was not processed 
+during deployment. This behavior happens if you created the web app directly on the portal rather than 
+using the az webapp up command as shown in this article.
+
+The 'az webapp up' command specifically sets the build action 
+
+'SCM_DO_BUILD_DURING_DEPLOYMENT = true'. 
+
+If you provisioned the app service through the portal, however, this action is not automatically set.
+
+The following steps set the action:
+
+- Open the Azure portal, select your App Service, then select Configuration.
+- Under the Application Settings tab, select New Application Setting.
+- In the popup that appears, set Name to SCM_DO_BUILD_DURING_DEPLOYMENT, set Value to true, and select OK.
+- Select Save at the top of the Configuration page.
+- Run the pipeline again. Your dependencies should be installed during deployment.
+```
    
