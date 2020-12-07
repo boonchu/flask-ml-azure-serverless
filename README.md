@@ -25,8 +25,8 @@ make install
 # set default resource group
 az configure --defaults group=vm-rg location=southeastasia
 
-# Create 'F1' App service plan
-az appservice plan create --name myPlan --sku F1 -g vm-rg --tags role=webapp
+# Create 'F1' App service plan free tier
+az appservice plan create --name myPlan --sku F1 -g linux-vm-rg --tags role=webapp --is-linux
 az appservice plan list --query "[?sku.tier=='Free']" -o table
 
 # find linux instance image type
