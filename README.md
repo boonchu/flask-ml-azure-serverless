@@ -29,11 +29,11 @@ az configure --defaults group=vm-rg location=southeastasia
 az appservice plan create --name myPlan --sku F1 -g linux-vm-rg --tags role=webapp --is-linux
 az appservice plan list --query "[?sku.tier=='Free']" -o table
 
-# find linux instance image type
+# find linux "runtime" type
 az webapp list-runtimes --linux
 
 # Create web app 'flask Machine Learning'
-az webapp up --name flaskMLServerless --resource-group vm-rg --plan myPlan --runtime "PYTHON|3.8"
+az webapp up --name flaskMLServerless --resource-group linux-vm-rg --plan myPlan --runtime "PYTHON|3.8"
 ```
 
    
