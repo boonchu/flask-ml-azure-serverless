@@ -22,8 +22,8 @@ variables:
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
   
-  # Python version: 3.5
-  pythonVersion: '3.5'
+  # Python version: 3.8
+  pythonVersion: '3.8'
 
 stages:
 - stage: Build
@@ -46,6 +46,21 @@ stages:
         pip install -r requirements.txt
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
+    
+    - script: |
+        make lint
+      displayName: "Run lint"
+    
+    - script: |
+        echo "Put test in here"
+        make test
+      displayName: "Run tests"
+      
+    - script: |
+        echo "Delete antenv"
+        deactivate
+        rm -rf antenv
+      displayName: "Remove antenv before zip"
 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
