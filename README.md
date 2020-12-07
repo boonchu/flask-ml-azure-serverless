@@ -33,7 +33,7 @@ az appservice plan list --query "[?sku.tier=='Free']" -o table
 az webapp list-runtimes --linux
 
 # Create web app 'flask Machine Learning'
-az webapp up --name flaskMLServerless --resource-group vm-rg --plan myPlan
+az webapp up --name flaskMLServerless --resource-group vm-rg --plan myPlan --runtime "PYTHON|3.8"
 ```
 
    
