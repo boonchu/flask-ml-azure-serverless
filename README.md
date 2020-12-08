@@ -43,6 +43,8 @@ az configure --defaults group=linux-vm-rg location=southeastasia
 
 # Create 'F1' App service plan free tier or 'B1' App service plan
 # https://janik6n.net/azure-app-service-503-service-unavailable
+# https://docs.microsoft.com/en-us/azure/app-service/troubleshoot-http-502-http-503
+# 
 az appservice plan create --name myPlan --sku B1 -g linux-vm-rg --tags role=webapp --is-linux
 az appservice plan list --query "[?sku.tier=='Free']" -o table
 
