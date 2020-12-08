@@ -20,13 +20,23 @@
    * [Find instance costs per hour](https://azure.microsoft.com/en-us/pricing/details/app-service/linux/)
    * [ref: az webapp create](https://docs.microsoft.com/en-us/cli/azure/webapp?view=azure-cli-latest#az_webapp_create)
 
+
+#### Follows pipeline instructions
+
+   * [bring your modern data pipeline to production](https://towardsdatascience.com/how-to-bring-your-modern-data-pipeline-to-production-2f14e42ac200)
+
+     - Create service end point flask web app
+     - Create Service Connection to fetch ID
+
+
 ```
+# Create service end point flask web app
 python3 -m venv ~/.flask-ml-azure
 source ~/.flask-ml-azure/bin/activate
 make install
 
 # set default resource group
-az group create --name linux-vm-rg 
+az group create --name linux-vm-rg --location southeastasia
 az configure --defaults group=linux-vm-rg location=southeastasia
 
 # Create 'F1' App service plan free tier
@@ -53,6 +63,16 @@ az webapp browse --name flaskMLServerless
 
 # Delete webapp
 az webapp delete --name flaskMLServerless
+```
+
+```
+# Create Service Connection to fetch ID
+- Create new project 'flask-ml-azure-serverless'
+- Configure 'project settings' -> 'Settings' -> 'Service Connections' 
+- You need 'WebApp Name', 'Subscription id', 'Resource Group'
+- Configure 'Azure Resource Manager'
+- Configure pipeline to allow to fetch github project
+- Update Service Connection ID in pipeline YAML
 ```
 
 #### Notes
