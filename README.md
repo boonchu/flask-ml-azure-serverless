@@ -26,11 +26,13 @@
    * [bring your modern data pipeline to production](https://towardsdatascience.com/how-to-bring-your-modern-data-pipeline-to-production-2f14e42ac200)
 
      - Create service end point flask web app
-     - Create Service Connection to fetch ID
+     - Create Project from [Azure devops](https://dev.azure.com/)
+     - Verify Service Connection ID
 
 
 ```
-# Create service end point flask web app
+#### Create service end point flask web app
+
 python3 -m venv ~/.flask-ml-azure
 source ~/.flask-ml-azure/bin/activate
 make install
@@ -39,8 +41,9 @@ make install
 az group create --name linux-vm-rg --location southeastasia
 az configure --defaults group=linux-vm-rg location=southeastasia
 
-# Create 'F1' App service plan free tier
-az appservice plan create --name myPlan --sku F1 -g linux-vm-rg --tags role=webapp --is-linux
+# Create 'F1' App service plan free tier or 'B1' App service plan
+# https://janik6n.net/azure-app-service-503-service-unavailable
+az appservice plan create --name myPlan --sku B1 -g linux-vm-rg --tags role=webapp --is-linux
 az appservice plan list --query "[?sku.tier=='Free']" -o table
 
 # find linux "runtime" type
@@ -66,7 +69,8 @@ az webapp delete --name flaskMLServerless
 ```
 
 ```
-# Create Service Connection to fetch ID
+#### Verify and create Service Connection to fetch ID
+
 - Create new project 'flask-ml-azure-serverless'
 - Configure 'project settings' -> 'Settings' -> 'Service Connections' 
 - You need 'WebApp Name', 'Subscription id', 'Resource Group'
